@@ -96,55 +96,12 @@ const P=[
 [28,"Tonic Water","Mixers","300ml",120,"Mixer for gin and spirit serves",0,["Weekend","Celebration"]]
 ];
 const cats=["All","Spirits","Vodka","Gin","Whisky","Rum","Brandy","Cognac","Wine","Beer","Cider","Water","Mixers"];
-const assetBase="file:///C:/Users/kelly/Downloads/Assets/";
-const FALLBACK_IMAGE="assets/Voyage-advent-logo.png";
-const PRODUCT_IMAGES={
-  "Kenya Cane":assetBase+"caribia%20250ml.jpg",
-  "Kibao Vodka":assetBase+"Kibao%20vodka%20750ml.jpg",
-  "Kibao Gin":assetBase+"Kibao%20gin%20750ml.jpg",
-  "Gilbey's Gin":assetBase+"Gilbeys%20Gin%20750ml.jpg",
-  "Smirnoff Red":assetBase+"Smirnoff%20red%20750ml.jpg",
-  "Chrome Gin":assetBase+"chrome-gin-750ml.jpg",
-  "Richot Brandy":assetBase+"Richot%20Brandy%20750ml.jpg",
-  "Viceroy Brandy":assetBase+"viceroy%20750ml.jpg",
-  "Captain Morgan Gold":assetBase+"captain-morgan-gold-750ml.jpg",
-  "Tusker Lager":assetBase+"Tusker%20lager%20500ml.jpg",
-  "Tusker Cider":assetBase+"Tusker%20cider%20500ml.jpg",
-  "4th Street Sweet Red":assetBase+"4th%20street%20red%20wine.jpg",
-  "Drostdy-Hof Red":assetBase+"Drostdy%20Hof%20Natural-Sweet%20Red%20750ml.webp",
-  "Savanna Dry":assetBase+"Savanna%20Dry%20500ml.jpg",
-  "Johnnie Walker Black Label":FALLBACK_IMAGE,
-  "Jameson Irish Whiskey":assetBase+"Jameson%20Irish%20Whiskey%20750ml.jpg",
-  "Hendrick's Gin":assetBase+"Hendrick's%20Gin.jpg",
-  "Bacardi Carta Blanca":assetBase+"Bacardi%20Carta%20Blanca.webp",
-  "Jack Daniel's":assetBase+"Jack%20Daniel's.jpg",
-  "Tanqueray London Dry":assetBase+"Tanqueray%20London%20Dry.jpg",
-  "Absolut Vodka":assetBase+"Absolut%20Vodka.png",
-  "Martell VS":assetBase+"Martell%20VS.jpg",
-  "Casillero del Diablo":assetBase+"Casillero%20del%20Diablo.jpg",
-  "Premium White Rum":assetBase+"V%20Premium%20White%20Rum.webp",
-  "Keringet":assetBase+"Keringet.jpg",
-  "Dasani":assetBase+"Dasani.jpg",
-  "Quencher":assetBase+"quencher.png",
-  "Tonic Water":assetBase+"Tonic%20Water.jpg",
-  Spirits:assetBase+"Jack%20Daniel's.jpg",
-  Vodka:assetBase+"Absolut%20Vodka.png",
-  Gin:assetBase+"Tanqueray%20London%20Dry.jpg",
-  Whisky:assetBase+"Jack%20Daniel's.jpg",
-  Rum:assetBase+"V%20Premium%20White%20Rum.webp",
-  Brandy:assetBase+"Richot%20Brandy%20750ml.jpg",
-  Cognac:assetBase+"Martell%20VS.jpg",
-  Wine:assetBase+"Casillero%20del%20Diablo.jpg",
-  Beer:assetBase+"Tusker%20lager%20500ml.jpg",
-  Cider:assetBase+"Tusker%20cider%20500ml.jpg",
-  Water:assetBase+"Keringet.jpg",
-  Mixers:assetBase+"Tonic%20Water.jpg"
-};
+const PRODUCT_IMAGES={};
 let cat="All",query="",cart=JSON.parse(localStorage.getItem("voyageCart")||"{}");
 const $=s=>document.querySelector(s),money=n=>"KSh "+n.toLocaleString("en-KE");
 function drawTabs(){ $("#tabs").innerHTML=cats.map(c=>`<button class="${c===cat?'active':''}" data-cat="${c}">${c}</button>`).join("");document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{cat=b.dataset.cat;draw()})}
 function products(){return P.filter(p=>(cat==="All"||p[2]===cat)&&[p[1],p[2],p[5]].join(" ").toLowerCase().includes(query.toLowerCase()))}
-function card(p){const image=PRODUCT_IMAGES[p[1]]||PRODUCT_IMAGES[p[2]]||FALLBACK_IMAGE;return `<article class="card"><div class="photo"><img src="${image}" alt="${p[1]} product" loading="lazy">${p[6]?'<span class="badge">KENYAN</span>':''}${p[0]>=15&&p[0]<=24?'<span class="badge" style="left:auto;right:10px">VOYAGE SELECTED</span>':''}<b>${p[1]}</b></div><div class="body"><h3>${p[1]}</h3><div class="meta">${p[2]} • ${p[3]}</div><p class="desc">${p[5]}</p><div class="bottom"><strong>${money(p[4])}</strong><button class="add" data-add="${p[0]}">ADD</button></div></div></article>`}
+function card(p){const image=PRODUCT_IMAGES[p[1]]||PRODUCT_IMAGES[p[2]];const imageMarkup=image?`<img src="${image}" alt="${p[1]} product" loading="lazy">`:"";return `<article class="card"><div class="photo">${imageMarkup}${p[6]?'<span class="badge">KENYAN</span>':''}${p[0]>=15&&p[0]<=24?'<span class="badge" style="left:auto;right:10px">VOYAGE SELECTED</span>':''}<b>${p[1]}</b></div><div class="body"><h3>${p[1]}</h3><div class="meta">${p[2]} • ${p[3]}</div><p class="desc">${p[5]}</p><div class="bottom"><strong>${money(p[4])}</strong><button class="add" data-add="${p[0]}">ADD</button></div></div></article>`}
 function draw(list=null){drawTabs();let a=list||products();$("#grid").innerHTML=a.length?a.map(card).join(""):"<p>No products found.</p>";document.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>add(+b.dataset.add))}
 function add(id){cart[id]=(cart[id]||0)+1;save();renderCart();openCart();toast("Added to your voyage.")}
 function save(){localStorage.setItem("voyageCart",JSON.stringify(cart));$("#count").textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
