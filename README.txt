@@ -5,7 +5,7 @@ This is a self-contained functional website.
 
 Files:
 - index.html (HTML + embedded CSS + JavaScript)
-- assets/voyage-advent-logo.png (the supplied Voyage Advent logo)
+- assets/Voyage-advent-logo.png (the supplied Voyage Advent logo)
 
 Included:
 - Responsive design
