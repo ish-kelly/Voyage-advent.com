@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voyage Advent | Premium Spirits • Wines • Beers</title>
+<meta name="description" content="Voyage Advent — premium spirits, wines, beers and everyday favourites.">
+<style>
+:root{--black:#0b0b0a;--gold:#d6a83d;--cream:#f4efe5;--white:#fff;--muted:#777;--line:#ddd4c5;--serif:Georgia,'Times New Roman',serif;--sans:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:#151513;font-family:var(--sans);line-height:1.5}a{text-decoration:none;color:inherit}button,input{font:inherit}button{cursor:pointer}
+.header{height:76px;background:#0b0b0a;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;position:sticky;top:0;z-index:50;border-bottom:1px solid #493817}
+.logo{display:flex;align-items:center;gap:12px}.logo img{width:50px;height:50px;object-fit:contain;border-radius:50%}.wordmark strong,.wordmark em{display:block}.wordmark strong{font-size:13px;letter-spacing:3px}.wordmark em{font-size:9px;color:var(--gold);letter-spacing:4px;font-style:normal}
+.nav{display:flex;gap:23px;font-size:12px;color:#ddd}.nav a:hover{color:var(--gold)}.cart-btn,.menu-btn{background:transparent;color:#fff;border:1px solid #51472f;padding:9px 13px}.cart-btn span{background:var(--gold);color:#111;border-radius:50%;padding:2px 6px;margin-left:4px}.menu-btn{display:none;font-size:20px}
+.hero{min-height:78vh;background:radial-gradient(circle at 70% 35%,#493a1f 0,#1c1912 32%,#080808 72%);color:#fff;display:flex;align-items:center;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:70vw;height:70vw;border:1px solid #735a24;border-radius:50%;right:-25vw;top:-15vw;opacity:.5}.hero-inner{position:relative;z-index:2;padding:8vw;max-width:850px}.eyebrow{color:var(--gold);font-size:10px;letter-spacing:3px;font-weight:bold}.hero h1{font-family:var(--serif);font-size:clamp(48px,7vw,88px);line-height:1.02;margin:14px 0}.hero h1 span{color:var(--gold)}.hero p{max-width:600px;color:#d5d2ca;font-size:16px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.btn{padding:13px 19px;border:1px solid transparent;font-weight:bold;font-size:12px}.gold{background:var(--gold);color:#111}.outline{background:transparent;border-color:#fff;color:#fff}.dark{background:#111;color:#fff}.section{padding:75px 7vw}.intro{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:end}.section h2{font-family:var(--serif);font-size:clamp(35px,4vw,56px);line-height:1.05;margin:8px 0 20px}.intro p{color:#666;font-size:17px}
+.heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:25px}.search{width:260px;border:1px solid var(--line);padding:12px;background:#fff;outline:0}.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:12px}.tabs button{white-space:nowrap;padding:9px 14px;border:1px solid var(--line);background:transparent;font-size:11px}.tabs .active,.tabs button:hover{background:#111;color:#fff;border-color:#111}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.card{background:#fff;border:1px solid #e2dbcf}.photo{height:235px;background:linear-gradient(145deg,#2a251b,#0d0d0c);display:grid;place-items:center;position:relative;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.9) contrast(1.05)}.photo b{position:absolute;color:#f7e7b0;text-shadow:0 2px 8px rgba(0,0,0,.6);font-family:var(--serif);font-size:17px;text-align:center;width:170px;bottom:14px;left:50%;transform:translateX(-50%);letter-spacing:.04em}.badge{position:absolute;left:10px;top:10px;background:var(--gold);color:#111;padding:5px 7px;font-size:8px;letter-spacing:1px;font-weight:bold;z-index:2}.body{padding:15px}.body h3{font-family:var(--serif);font-size:20px;margin:0 0 3px}.meta{font-size:10px;color:#888}.desc{font-size:11px;color:#666;min-height:36px}.bottom{display:flex;justify-content:space-between;align-items:center;margin-top:13px}.add{background:#111;color:#fff;border:0;padding:9px 12px;font-size:10px;font-weight:bold}.add:hover{background:var(--gold);color:#111}
+.banner{background:#12110f;color:#fff;padding:80px 7vw;display:flex;justify-content:space-between;align-items:center;gap:30px}.banner p{color:#bbb;max-width:590px}.stamp{width:150px;height:150px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--gold);font-family:var(--serif);font-size:46px;line-height:.85;flex:none}.stamp small{font:9px var(--sans);letter-spacing:2px}
+.collections{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#cfc7b8}.collection{background:var(--cream);padding:25px;min-height:175px}.collection i{font-size:10px;color:var(--gold);font-style:normal}.collection h3{font:27px var(--serif);margin:30px 0 3px}.collection p{font-size:11px;color:#777}.center{text-align:center;margin-top:25px}
+.occasion{background:#e8e0d3}.occasion-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.occasion-grid button{background:#fff;border:1px solid var(--line);padding:24px;text-align:left;min-height:160px}.occasion-grid button:hover{border-color:var(--gold);transform:translateY(-2px)}.occasion-grid b{display:block;color:var(--gold);font-size:10px}.occasion-grid strong{display:block;font:25px var(--serif);margin:45px 0 3px}
+.story{display:grid;grid-template-columns:1.4fr .6fr;gap:8vw;align-items:center}.story p{color:#666;max-width:650px}.story-box{background:#111;color:#fff;min-height:300px;display:grid;place-items:center;text-align:center;border:1px solid var(--gold)}.story-box img{width:210px;max-width:70%;height:auto}
+.payment{background:#e8e0d3}.paybox{background:#111;color:#fff;padding:38px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;border:1px solid #735a24}.paybox p{color:#bbb}.paydetails{display:flex;gap:12px}.paydetails div{border:1px solid #735a24;padding:18px 24px;background:#181714}.paydetails span{display:block;color:var(--gold);font-size:9px;letter-spacing:2px}.paydetails strong{font-size:22px}
+footer{background:#090909;color:#aaa;padding:55px 7vw 25px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}footer h4{color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:1px}footer p,footer a{font-size:11px}.footer-logo{display:flex;align-items:center;gap:12px}.footer-logo img{width:60px;height:60px;border-radius:50%}.copy{grid-column:1/-1;border-top:1px solid #292929;padding-top:18px;font-size:9px}
+.age{position:fixed;inset:0;background:#080808f7;z-index:100;display:grid;place-items:center;padding:20px}.age.hidden{display:none}.agebox{max-width:500px;background:#151411;color:#fff;text-align:center;padding:40px 30px;border:1px solid var(--gold)}.agebox img{width:100px;height:100px;border-radius:50%}.agebox h1{font:40px var(--serif)}.agebox p{color:#bbb}.ageactions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.drawer{position:fixed;z-index:80;right:0;top:0;width:min(450px,100%);height:100vh;background:#fff;transform:translateX(100%);transition:.25s;display:flex;flex-direction:column;box-shadow:-20px 0 50px #0003}.drawer.open{transform:translateX(0)}.backdrop{position:fixed;inset:0;background:#0007;z-index:70;display:none}.backdrop.open{display:block}.carthead{padding:22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.carthead button{border:0;background:none;font-size:28px}.items{flex:1;overflow:auto;padding:0 22px}.item{padding:15px 0;border-bottom:1px solid #eee;display:flex;justify-content:space-between;gap:15px}.item h4{font:17px var(--serif);margin:0}.qty button{width:25px;height:25px;background:#fff;border:1px solid #ddd}.qty{display:flex;gap:7px;align-items:center;margin-top:7px}.remove{border:0;background:none;color:#888;font-size:10px}.cartfoot{padding:20px;border-top:1px solid var(--line)}.total{display:flex;justify-content:space-between;font-size:17px}.full{width:100%;margin-top:9px}.empty{flex:1;display:grid;place-items:center;color:#888;text-align:center}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;z-index:120;background:#111;color:#fff;border-left:3px solid var(--gold);padding:12px 18px;font-size:11px;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:950px){.nav{display:none}.menu-btn{display:block}.nav.open{display:flex;position:absolute;left:0;right:0;top:76px;background:#0b0b0a;padding:20px 7vw;flex-direction:column}.grid{grid-template-columns:repeat(3,1fr)}.occasion-grid,.collections{grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.header{padding:0 5vw}.logo img{width:42px;height:42px}.section{padding:58px 6vw}.intro,.story,.paybox{grid-template-columns:1fr}.heading{align-items:stretch;flex-direction:column}.search{width:100%}.grid{grid-template-columns:1fr 1fr;gap:10px}.photo{height:180px}.body{padding:12px}.body h3{font-size:17px}.banner{padding:60px 6vw}.stamp{width:110px;height:110px;font-size:35px}.occasion-grid,.collections{grid-template-columns:1fr}.paydetails{flex-direction:column}footer{grid-template-columns:1fr}.copy{grid-column:1}}
+</style>
+</head>
+<body>
+<div class="age" id="age">
+  <div class="agebox">
+    <img src="assets/voyage-advent-logo.png" alt="Voyage Advent">
+    <p class="eyebrow">WELCOME TO</p><h1>Voyage Advent</h1>
+    <p>This website sells alcoholic beverages. You must be of legal drinking age in Kenya to enter.</p>
+    <div class="ageactions"><button class="btn gold" id="enter">I am of legal drinking age</button><button class="btn outline" id="leave">Leave</button></div>
+  </div>
+</div>
+
+<header class="header">
+  <a class="logo" href="#home"><img src="assets/voyage-advent-logo.png" alt="Voyage Advent logo"><span class="wordmark"><strong>VOYAGE</strong><em>ADVENT</em></span></a>
+  <nav class="nav" id="nav"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#premium">Voyage Collection</a><a href="#kenyan">Kenyan Collection</a><a href="#payment">Payment</a></nav>
+  <div><button class="cart-btn" id="openCart">Cart <span id="count">0</span></button><button class="menu-btn" id="menu">☰</button></div>
+</header>
+
+<main>
+<section class="hero" id="home"><div class="hero-inner"><div class="eyebrow">PREMIUM SPIRITS • WINES • BEERS</div><h1>Not a liquor store.<br><span>A launchpad.</span></h1><p>Bottles that taste like places you've never been — alongside the Kenyan favourites you already know and love.</p><div class="actions"><a class="btn gold" href="#shop">Explore the collection</a><a class="btn outline" href="#premium">The Voyage Collection</a></div></div></section>
+
+<section class="section intro"><div><div class="eyebrow">THE VOYAGE</div><h2>Your next bottle starts here.</h2></div><p>Voyage Advent is a focused neighbourhood drinks shop: fast-moving favourites, a carefully selected premium shelf and simple WhatsApp ordering.</p></section>
+
+<section class="section" id="shop"><div class="heading"><div><div class="eyebrow">SHOP</div><h2>Find your pour.</h2></div><input class="search" id="search" placeholder="Search drinks..."></div><div class="tabs" id="tabs"></div><div class="grid" id="grid"></div></section>
+
+<section class="banner" id="premium"><div><div class="eyebrow">THE VOYAGE COLLECTION</div><h2>10 bottles worth travelling for.</h2><p>Our premium shelf is deliberately curated — distinctive bottles that give Voyage Advent character without tying up the whole inventory.</p><button class="btn gold" id="premiumBtn">Shop premium</button></div><div class="stamp">10<br><small>SELECTED</small></div></section>
+
+<section class="section" id="kenyan"><div class="heading"><div><div class="eyebrow">FROM KENYA, WITH CHARACTER</div><h2>Kenyan Collection.</h2></div></div><div class="collections"><div class="collection"><i>01</i><h3>Kibao</h3><p>Vodka & Gin</p></div><div class="collection"><i>02</i><h3>Kenya Cane</h3><p>Classic cane spirits & variants</p></div><div class="collection"><i>03</i><h3>London Distillers</h3><p>Selected local spirits</p></div><div class="collection"><i>04</i><h3>KWAL</h3><p>Selected wines & spirits</p></div></div><div class="center"><button class="btn dark" id="kenyanBtn">Shop Kenyan products</button></div></section>
+
+<section class="section occasion"><div class="heading"><div><div class="eyebrow">WHAT'S THE OCCASION?</div><h2>Choose the mood.</h2></div></div><div class="occasion-grid"><button data-occ="Celebration"><b>01</b><strong>Celebration</strong><span>Raise the glass.</span></button><button data-occ="Weekend"><b>02</b><strong>Weekend</strong><span>Slow down. Pour up.</span></button><button data-occ="Gifting"><b>03</b><strong>Gifting</strong><span>Give a good story.</span></button><button data-occ="Slow Evening"><b>04</b><strong>Slow Evening</strong><span>Take your time.</span></button></div></section>
+
+<section class="section story"><div><div class="eyebrow">OUR STORY</div><h2>Walk in for a Tuesday night.<br>Walk out with a story.</h2><p>Voyage Advent keeps the everyday bottles moving while giving a small premium collection room to breathe. Order in-store or from your phone.</p><p>No maps required. Just curiosity and a corkscrew.</p></div><div class="story-box"><img src="assets/voyage-advent-logo.png" alt="Voyage Advent logo"></div></section>
+
+<section class="section payment" id="payment"><div class="paybox"><div><div class="eyebrow">PAYMENT</div><h2>Lipa na M-PESA.</h2><p>After we confirm your order, stock and delivery details, pay securely using the details below.</p></div><div class="paydetails"><div><span>PAYBILL</span><strong>880100</strong></div><div><span>ACCOUNT</span><strong>072621</strong></div></div></div></section>
+</main>
+
+<footer><div><div class="footer-logo"><img src="assets/voyage-advent-logo.png" alt="Voyage Advent"><span class="wordmark"><strong>VOYAGE</strong><em>ADVENT</em></span></div><p>Not a liquor store. A launchpad.</p></div><div><h4>Order</h4><a href="#shop">Shop</a><p>WhatsApp ordering</p><p>Local delivery</p></div><div><h4>Payment</h4><p>Paybill <b>880100</b></p><p>Account <b>072621</b></p></div><div><h4>Important</h4><p>18+ only.</p><p>Drink responsibly.</p></div><div class="copy">© <span id="year"></span> Voyage Advent. All rights reserved.</div></footer>
+
+<aside class="drawer" id="drawer"><div class="carthead"><div><div class="eyebrow">YOUR ORDER</div><h2>Voyage Cart</h2></div><button id="close">×</button></div><div class="items" id="items"></div><div class="empty" id="empty">Your cart is waiting for a voyage.</div><div class="cartfoot"><div class="total"><span>Subtotal</span><b id="total">KSh 0</b></div><button class="btn gold full" id="whatsapp">Order on WhatsApp</button><button class="btn full" id="clear">Clear cart</button></div></aside><div class="backdrop" id="backdrop"></div><div class="toast" id="toast"></div>
+
+<script>
+const P=[
+[1,"Kenya Cane","Spirits","750ml",650,"Kenyan classic for easy everyday pours",1,["Weekend","Celebration"]],
+[2,"Kibao Vodka","Vodka","250ml",250,"Accessible everyday vodka",1,["Weekend"]],
+[3,"Kibao Gin","Gin","250ml",250,"Straightforward Kenyan gin",1,["Weekend"]],
+[4,"Gilbey's Gin","Gin","750ml",1450,"Familiar London-style gin",0,["Weekend","Celebration"]],
+[5,"Smirnoff Red","Vodka","750ml",1500,"Versatile vodka for mixed drinks",0,["Weekend","Celebration"]],
+[6,"Chrome Gin","Gin","750ml",950,"Approachable gin for everyday G&T",1,["Weekend"]],
+[7,"Richot Brandy","Brandy","750ml",1250,"Smooth familiar brandy",0,["Slow Evening"]],
+[8,"Viceroy Brandy","Brandy","750ml",1650,"Classic Kenyan brandy",1,["Slow Evening","Gifting"]],
+[9,"Captain Morgan Gold","Rum","750ml",1850,"Warm spiced rum character",0,["Weekend","Celebration"]],
+[10,"Tusker Lager","Beer","500ml",220,"Kenyan lager classic",1,["Weekend","Celebration"]],
+[11,"Tusker Cider","Cider","500ml",250,"Crisp and refreshing",1,["Weekend"]],
+[12,"4th Street Sweet Red","Wine","750ml",900,"Approachable sweet red",1,["Celebration","Gifting"]],
+[13,"Drostdy-Hof Red","Wine","750ml",1000,"Easy wine for dinner",1,["Slow Evening","Gifting"]],
+[14,"Savanna Dry","Cider","500ml",300,"Crisp weekend cider",1,["Weekend"]],
+[15,"Johnnie Walker Black Label","Whisky","750ml",4800,"Premium smoky blended Scotch",0,["Slow Evening","Gifting"]],
+[16,"Jameson Irish Whiskey","Whisky","750ml",3600,"Smooth approachable Irish whiskey",0,["Slow Evening","Gifting"]],
+[17,"Hendrick's Gin","Gin","700ml",6200,"Distinctive premium gin",0,["Gifting","Celebration"]],
+[18,"Bacardi Carta Blanca","Rum","750ml",2400,"Light clean rum for cocktails",0,["Celebration","Weekend"]],
+[19,"Jack Daniel's","Whisky","750ml",3900,"Recognisable Tennessee whiskey",0,["Gifting","Slow Evening"]],
+[20,"Tanqueray London Dry","Gin","750ml",4200,"Classic London Dry profile",0,["Celebration","Gifting"]],
+[21,"Absolut Vodka","Vodka","750ml",2600,"Clean versatile premium vodka",0,["Celebration","Weekend"]],
+[22,"Martell VS","Cognac","700ml",5500,"Polished cognac for gifting",0,["Gifting","Slow Evening"]],
+[23,"Casillero del Diablo","Wine","750ml",1900,"Recognisable wine for dinners",0,["Gifting","Slow Evening"]],
+[24,"Premium White Rum","Rum","750ml",3200,"Bright rum for cocktails",0,["Celebration","Weekend"]],
+[25,"Keringet","Water","1L",120,"Premium Kenyan bottled water",0,["Celebration","Weekend"]],
+[26,"Dasani","Water","1L",100,"Everyday bottled water",0,["Celebration","Weekend"]],
+[27,"Quencher","Water","1L",100,"Convenient bottled water",0,["Celebration","Weekend"]],
+[28,"Tonic Water","Mixers","300ml",120,"Mixer for gin and spirit serves",0,["Weekend","Celebration"]]
+];
+const cats=["All","Spirits","Vodka","Gin","Whisky","Rum","Brandy","Cognac","Wine","Beer","Cider","Water","Mixers"];
+const assetBase="file:///C:/Users/kelly/Downloads/Assets/";
+const FALLBACK_IMAGE="file:///C:/Users/kelly/Downloads/Voyage_Advent_COMPLETE_FIXED/assets/voyage-advent-logo.png";
+const PRODUCT_IMAGES={
+  "Kenya Cane":assetBase+"caribia%20250ml.jpg",
+  "Kibao Vodka":assetBase+"Kibao%20vodka%20750ml.jpg",
+  "Kibao Gin":assetBase+"Kibao%20gin%20750ml.jpg",
+  "Gilbey's Gin":assetBase+"Gilbeys%20Gin%20750ml.jpg",
+  "Smirnoff Red":assetBase+"Smirnoff%20red%20750ml.jpg",
+  "Chrome Gin":assetBase+"chrome-gin-750ml.jpg",
+  "Richot Brandy":assetBase+"Richot%20Brandy%20750ml.jpg",
+  "Viceroy Brandy":assetBase+"viceroy%20750ml.jpg",
+  "Captain Morgan Gold":assetBase+"captain-morgan-gold-750ml.jpg",
+  "Tusker Lager":assetBase+"Tusker%20lager%20500ml.jpg",
+  "Tusker Cider":assetBase+"Tusker%20cider%20500ml.jpg",
+  "4th Street Sweet Red":assetBase+"4th%20street%20red%20wine.jpg",
+  "Drostdy-Hof Red":assetBase+"Drostdy%20Hof%20Natural-Sweet%20Red%20750ml.webp",
+  "Savanna Dry":assetBase+"Savanna%20Dry%20500ml.jpg",
+  "Johnnie Walker Black Label":FALLBACK_IMAGE,
+  "Jameson Irish Whiskey":assetBase+"Jameson%20Irish%20Whiskey%20750ml.jpg",
+  "Hendrick's Gin":assetBase+"Hendrick's%20Gin.jpg",
+  "Bacardi Carta Blanca":assetBase+"Bacardi%20Carta%20Blanca.webp",
+  "Jack Daniel's":assetBase+"Jack%20Daniel's.jpg",
+  "Tanqueray London Dry":assetBase+"Tanqueray%20London%20Dry.jpg",
+  "Absolut Vodka":assetBase+"Absolut%20Vodka.png",
+  "Martell VS":assetBase+"Martell%20VS.jpg",
+  "Casillero del Diablo":assetBase+"Casillero%20del%20Diablo.jpg",
+  "Premium White Rum":assetBase+"V%20Premium%20White%20Rum.webp",
+  "Keringet":assetBase+"Keringet.jpg",
+  "Dasani":assetBase+"Dasani.jpg",
+  "Quencher":assetBase+"quencher.png",
+  "Tonic Water":assetBase+"Tonic%20Water.jpg",
+  Spirits:assetBase+"Jack%20Daniel's.jpg",
+  Vodka:assetBase+"Absolut%20Vodka.png",
+  Gin:assetBase+"Tanqueray%20London%20Dry.jpg",
+  Whisky:assetBase+"Jack%20Daniel's.jpg",
+  Rum:assetBase+"V%20Premium%20White%20Rum.webp",
+  Brandy:assetBase+"Richot%20Brandy%20750ml.jpg",
+  Cognac:assetBase+"Martell%20VS.jpg",
+  Wine:assetBase+"Casillero%20del%20Diablo.jpg",
+  Beer:assetBase+"Tusker%20lager%20500ml.jpg",
+  Cider:assetBase+"Tusker%20cider%20500ml.jpg",
+  Water:assetBase+"Keringet.jpg",
+  Mixers:assetBase+"Tonic%20Water.jpg"
+};
+let cat="All",query="",cart=JSON.parse(localStorage.getItem("voyageCart")||"{}");
+const $=s=>document.querySelector(s),money=n=>"KSh "+n.toLocaleString("en-KE");
+function drawTabs(){ $("#tabs").innerHTML=cats.map(c=>`<button class="${c===cat?'active':''}" data-cat="${c}">${c}</button>`).join("");document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{cat=b.dataset.cat;draw()})}
+function products(){return P.filter(p=>(cat==="All"||p[2]===cat)&&[p[1],p[2],p[5]].join(" ").toLowerCase().includes(query.toLowerCase()))}
+function card(p){const image=PRODUCT_IMAGES[p[1]]||PRODUCT_IMAGES[p[2]]||FALLBACK_IMAGE;return `<article class="card"><div class="photo"><img src="${image}" alt="${p[1]} product" loading="lazy">${p[6]?'<span class="badge">KENYAN</span>':''}${p[0]>=15&&p[0]<=24?'<span class="badge" style="left:auto;right:10px">VOYAGE SELECTED</span>':''}<b>${p[1]}</b></div><div class="body"><h3>${p[1]}</h3><div class="meta">${p[2]} • ${p[3]}</div><p class="desc">${p[5]}</p><div class="bottom"><strong>${money(p[4])}</strong><button class="add" data-add="${p[0]}">ADD</button></div></div></article>`}
+function draw(list=null){drawTabs();let a=list||products();$("#grid").innerHTML=a.length?a.map(card).join(""):"<p>No products found.</p>";document.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>add(+b.dataset.add))}
+function add(id){cart[id]=(cart[id]||0)+1;save();renderCart();openCart();toast("Added to your voyage.")}
+function save(){localStorage.setItem("voyageCart",JSON.stringify(cart));$("#count").textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
+function renderCart(){let es=Object.entries(cart).filter(x=>x[1]>0);$("#empty").style.display=es.length?"none":"grid";$("#items").innerHTML=es.map(([id,q])=>{let p=P.find(x=>x[0]===+id);return `<div class="item"><div><h4>${p[1]}</h4><small>${p[3]} • ${money(p[4])}</small><div class="qty"><button data-minus="${id}">−</button><b>${q}</b><button data-plus="${id}">+</button><button class="remove" data-remove="${id}">Remove</button></div></div><b>${money(p[4]*q)}</b></div>`}).join("");let t=es.reduce((s,[id,q])=>s+P.find(p=>p[0]===+id)[4]*q,0);$("#total").textContent=money(t);document.querySelectorAll("[data-minus]").forEach(b=>b.onclick=()=>qty(+b.dataset.minus,-1));document.querySelectorAll("[data-plus]").forEach(b=>b.onclick=()=>qty(+b.dataset.plus,1));document.querySelectorAll("[data-remove]").forEach(b=>b.onclick=()=>{delete cart[b.dataset.remove];save();renderCart()});save()}
+function qty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];save();renderCart()}
+function openCart(){$("#drawer").classList.add("open");$("#backdrop").classList.add("open")}
+function closeCart(){$("#drawer").classList.remove("open");$("#backdrop").classList.remove("open")}
+function toast(t){let x=$("#toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),1800)}
+$("#search").oninput=e=>{query=e.target.value;draw()};
+$("#openCart").onclick=openCart;$("#close").onclick=closeCart;$("#backdrop").onclick=closeCart;
+$("#clear").onclick=()=>{cart={};save();renderCart();toast("Cart cleared.")};
+function showList(filter){query="";$("#search").value="";cat="All";draw(P.filter(filter));$("#shop").scrollIntoView({behavior:"smooth"})}
+$("#premiumBtn").onclick=()=>showList(p=>p[0]>=15&&p[0]<=24);
+$("#kenyanBtn").onclick=()=>showList(p=>p[6]);
+document.querySelectorAll("[data-occ]").forEach(b=>b.onclick=()=>showList(p=>p[7].includes(b.dataset.occ)));
+$("#whatsapp").onclick=()=>{let es=Object.entries(cart).filter(x=>x[1]>0);if(!es.length){toast("Add a product first.");return}let lines=es.map(([id,q])=>{let p=P.find(x=>x[0]===+id);return`• ${p[1]} (${p[3]}) x${q} — ${money(p[4]*q)}`});let t=es.reduce((s,[id,q])=>s+P.find(p=>p[0]===+id)[4]*q,0);let msg=`Hello Voyage Advent 👋%0A%0AI'd like to place an order:%0A${encodeURIComponent(lines.join("\n"))}%0A%0ASubtotal: ${encodeURIComponent(money(t))}%0A%0APlease confirm availability, delivery fee and total payable.`;let number="2547XXXXXXXX";if(number.includes("X")){navigator.clipboard?.writeText(decodeURIComponent(msg));toast("Order copied. Add your WhatsApp number in the code.");return}window.open("https://wa.me/"+number+"?text="+msg,"_blank")};
+$("#menu").onclick=()=>$("#nav").classList.toggle("open");
+$("#enter").onclick=()=>{localStorage.setItem("voyageAge","yes");$("#age").classList.add("hidden")};
+$("#leave").onclick=()=>location.href="https://www.google.com";
+if(localStorage.getItem("voyageAge")==="yes")$("#age").classList.add("hidden");
+$("#year").textContent=new Date().getFullYear();draw();renderCart();
+</script>
+</body>
+</html>
