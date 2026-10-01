@@ -96,7 +96,49 @@ const P=[
 [28,"Tonic Water","Mixers","300ml",120,"Mixer for gin and spirit serves",0,["Weekend","Celebration"]]
 ];
 const cats=["All","Spirits","Vodka","Gin","Whisky","Rum","Brandy","Cognac","Wine","Beer","Cider","Water","Mixers"];
-const PRODUCT_IMAGES={};
+const assetBase="assets/product-images/";
+const PRODUCT_IMAGES={
+  "Kenya Cane":assetBase+"caribia 250ml.jpg",
+  "Kibao Vodka":assetBase+"Kibao vodka 750ml.jpg",
+  "Kibao Gin":assetBase+"Kibao gin 750ml.jpg",
+  "Gilbey's Gin":assetBase+"Gilbeys Gin 750ml.jpg",
+  "Smirnoff Red":assetBase+"Smirnoff red 750ml.jpg",
+  "Chrome Gin":assetBase+"chrome-gin-750ml.jpg",
+  "Richot Brandy":assetBase+"Richot Brandy 750ml.jpg",
+  "Viceroy Brandy":assetBase+"viceroy 750ml.jpg",
+  "Captain Morgan Gold":assetBase+"captain-morgan-gold-750ml.jpg",
+  "Tusker Lager":assetBase+"Tusker lager 500ml.jpg",
+  "Tusker Cider":assetBase+"Tusker cider 500ml.jpg",
+  "4th Street Sweet Red":assetBase+"4th street red wine.jpg",
+  "Drostdy-Hof Red":assetBase+"Drostdy Hof Natural-Sweet Red 750ml.webp",
+  "Savanna Dry":assetBase+"Savanna Dry 500ml.jpg",
+  "Johnnie Walker Black Label":assetBase+"Johnie walker black label.jpg",
+  "Jameson Irish Whiskey":assetBase+"Jameson Irish Whiskey 750ml.jpg",
+  "Hendrick's Gin":assetBase+"Hendrick's Gin.jpg",
+  "Bacardi Carta Blanca":assetBase+"Bacardi Carta Blanca.webp",
+  "Jack Daniel's":assetBase+"Jack Daniel's.jpg",
+  "Tanqueray London Dry":assetBase+"Tanqueray London Dry.jpg",
+  "Absolut Vodka":assetBase+"Absolut Vodka.png",
+  "Martell VS":assetBase+"Martell VS.jpg",
+  "Casillero del Diablo":assetBase+"Casillero del Diablo.jpg",
+  "Premium White Rum":assetBase+"V Premium White Rum.webp",
+  "Keringet":assetBase+"Keringet.jpg",
+  "Dasani":assetBase+"Dasani.jpg",
+  "Quencher":assetBase+"quencher.png",
+  "Tonic Water":assetBase+"Tonic Water.jpg",
+  Spirits:assetBase+"Jack Daniel's.jpg",
+  Vodka:assetBase+"Absolut Vodka.png",
+  Gin:assetBase+"Tanqueray London Dry.jpg",
+  Whisky:assetBase+"Jack Daniel's.jpg",
+  Rum:assetBase+"V Premium White Rum.webp",
+  Brandy:assetBase+"Richot Brandy 750ml.jpg",
+  Cognac:assetBase+"Martell VS.jpg",
+  Wine:assetBase+"Casillero del Diablo.jpg",
+  Beer:assetBase+"Tusker lager 500ml.jpg",
+  Cider:assetBase+"Tusker cider 500ml.jpg",
+  Water:assetBase+"Keringet.jpg",
+  Mixers:assetBase+"Tonic Water.jpg"
+};
 let cat="All",query="",cart=JSON.parse(localStorage.getItem("voyageCart")||"{}");
 const $=s=>document.querySelector(s),money=n=>"KSh "+n.toLocaleString("en-KE");
 function drawTabs(){ $("#tabs").innerHTML=cats.map(c=>`<button class="${c===cat?'active':''}" data-cat="${c}">${c}</button>`).join("");document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{cat=b.dataset.cat;draw()})}
